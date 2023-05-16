@@ -8,9 +8,10 @@ services:
     env_file:
       - /.env
   web:
+    image: kreamsandwich/api_yamdb:latest
     build:
       context: ../
-      image: kreamsandwich/api_yamdb:latest
+      dockerfile: /api_yamdb/Dockerfile
     restart: always
     volumes:
      - static_value:/app/api_yamdb/static/
