@@ -10,7 +10,7 @@ services:
   web:
     build:
       context: ../
-      image: kreamsandwich/api_yamdb
+      image: kreamsandwich/api_yamdb:latest
     restart: always
     volumes:
      - static_value:/app/api_yamdb/static/
