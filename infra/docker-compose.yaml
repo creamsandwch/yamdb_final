@@ -15,7 +15,7 @@ services:
       - ./.env
 
   web:
-    image: api_yamdb:latest
+    image: kreamsandwich/api_yamdb:latest
     restart: always
     volumes:
       - static_value:/app/api_yamdb/static/
