@@ -23,7 +23,7 @@ jobs:
           # dependencies installation
           pip install -r api_yamdb/requirements.txt
 
-      - name: Test with flake8 and django tests
+      - name: Test with flake8 and pytests
         run: |
           # project check w flake8
           python -m flake8
@@ -51,7 +51,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: kreamsandwich/infra_actions:latest
+          tags: kreamsandwich/infra_actions
 
   deploy:
     runs-on: ubuntu-latest
