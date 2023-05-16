@@ -1,30 +1,24 @@
-from django.core.mail import send_mail
 from django.contrib.auth.tokens import default_token_generator
-from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
 from django.db.models import Avg
-from rest_framework.filters import SearchFilter
+from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.filters import SearchFilter
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-from rest_framework.permissions import AllowAny, IsAuthenticated
 from reviews.models import Category, Genre, Review, Title, User
 
 from .filters import TitleFilter
 from .mixins import ListCreateDestroyViewSet
-from .serializers import (CategorySerializer,
-                          GenreSerializer,
-                          TitleGetSerializer,
-                          TitlePostSerializer,
-                          ReviewSerializer,
-                          CommentSerializer,
-                          SignUpSerializer,
-                          TokenSerializer,
-                          UserSerializer)
-from .permissions import (IsAdminUser,
-                          IsAuthorAdminModerSuperuserOrReadOnly,
-                          IsAdminSuperuserOrReadOnly)
+from .permissions import (IsAdminSuperuserOrReadOnly, IsAdminUser,
+                          IsAuthorAdminModerSuperuserOrReadOnly)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, ReviewSerializer, SignUpSerializer,
+                          TitleGetSerializer, TitlePostSerializer,
+                          TokenSerializer, UserSerializer)
 
 
 class CategoryViewSet(ListCreateDestroyViewSet):
@@ -74,8 +68,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         review_id = self.kwargs.get('review_id')
         title_id = self.kwargs.get('title_id')
         review = get_object_or_404(Review, id=review_id, title=title_id)
-        comments = review.comments.all()
-        return comments
+        return review.comments.all()
 
     def perform_create(self, serializer):
         review_id = self.kwargs.get('review_id')
@@ -92,8 +85,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         title_id = self.kwargs.get('title_id')
         title = get_object_or_404(Title, id=title_id)
-        reviews = title.reviews.all()
-        return reviews
+        return title.reviews.all()
 
     def perform_create(self, serializer):
         title_id = self.kwargs.get('title_id')
