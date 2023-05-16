@@ -12,7 +12,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "158.160.47.5",
+]
 
 # For model User
 AUTH_USER_MODEL = 'reviews.User'
