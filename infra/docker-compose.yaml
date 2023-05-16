@@ -1,12 +1,10 @@
-version: '3.8'
-
+---
+version: "3.8"
 volumes:
-  static_value:
-  media_value:
-  data_value:
-
+  static_value: null
+  media_value: null
+  data_value: null
 services:
-
   db:
     image: postgres:13.0-alpine
     volumes:
@@ -17,21 +15,19 @@ services:
     image: kreamsandwich/api_yamdb:latest
     restart: always
     volumes:
-      - static_value:/app/static/
-      - media_value:/app/media/
+      - static_value:/app/api_yamdb/static/
+      - media_value:/app/api_yamdb/media/
     depends_on:
       - db
     env_file:
       - ./.env
-
   nginx:
     image: nginx:1.21.3-alpine
     ports:
-      - "80:80"
+      - 80:80
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/var/html/static/
       - media_value:/var/html/media/
-
     depends_on:
       - web
