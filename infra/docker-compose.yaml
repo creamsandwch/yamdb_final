@@ -9,9 +9,6 @@ services:
       - /.env
   web:
     image: kreamsandwich/api_yamdb:latest
-    build:
-      context: ../
-      dockerfile: /api_yamdb/Dockerfile
     restart: always
     volumes:
      - static_value:/app/api_yamdb/static/
