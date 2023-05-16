@@ -12,7 +12,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "158.160.47.5",
+    "158.160.38.72",
 ]
 
 # For model User
