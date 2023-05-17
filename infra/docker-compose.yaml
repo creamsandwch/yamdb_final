@@ -1,9 +1,13 @@
 ---
 version: "3.8"
+
+
 volumes:
   static_value: null
   media_value: null
   data_value: null
+
+
 services:
   db:
     image: postgres:13.0-alpine
@@ -11,6 +15,7 @@ services:
       - data_value:/var/lib/postgresql/data/
     env_file:
       - ./.env
+
   web:
     image: kreamsandwich/api_yamdb:latest
     restart: always
@@ -21,6 +26,7 @@ services:
       - db
     env_file:
       - ./.env
+
   nginx:
     image: nginx:1.21.3-alpine
     ports:
