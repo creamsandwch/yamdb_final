@@ -1,7 +1,11 @@
 
 name: yamdb workflow
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
+      - 'api_yamdb/yamdb_workflow.yaml'
 
 jobs:
   tests:
@@ -89,4 +93,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ${{ github.actor}} успешно выполнил ${{ github.workflow }} в ${{github.repository}}!
+          message: ${{ github.actor}} успешно выполнил ${{ github.workflow }} в ${{github.repository}}. Action - ${{ github.action}}!
