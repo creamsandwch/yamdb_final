@@ -74,7 +74,6 @@ jobs:
             script: |
                 docker compose stop
                 docker compose rm web
-                if [ ! -f .env]
                 sudo touch .env
                 sudo echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
                 sudo echo DB_NAME=${{ secrets.DB_NAME }} >> .env
