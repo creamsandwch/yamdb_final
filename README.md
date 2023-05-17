@@ -5,8 +5,9 @@ yamdb_final
 
 ## CI/CD для проекта https://github.com/creamsandwch/infra_sp2
 
-#### REST API Django project in a Docker container.
 ___
+#### REST API Django project in a Docker container.
+
 
 ## Launch
 To launch web application it is needed to build a docker container. It means that the machine used for launching should have docker installed. Then run the following commands:
