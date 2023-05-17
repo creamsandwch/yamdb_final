@@ -93,4 +93,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ${{ github.actor}} успешно выполнил ${{ github.workflow }} в ${{github.repository}}. Action - ${{ github.action}}!
+          message: ${{ github.actor}} успешно выполнил ${{ github.workflow }} в ${{github.repository}}!
