@@ -1,9 +1,11 @@
 # yamdb_final
 yamdb_final
 ![workflow badge.](https://github.com/creamsandwch/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
-CI/CD для проекта https://github.com/creamsandwch/infra_sp2
 
-### REST API Django project in a Docker container.
+
+## CI/CD для проекта https://github.com/creamsandwch/infra_sp2
+
+#### REST API Django project in a Docker container.
 ___
 
 ## Launch
