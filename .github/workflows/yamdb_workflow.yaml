@@ -5,6 +5,7 @@ on:
   push:
     paths-ignore:
       - '**/README.md'
+      - 'api_yamdb/yamdb_workflow.yaml'
 
 jobs:
   tests:
