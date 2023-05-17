@@ -1,6 +1,6 @@
 # yamdb_final
 ![workflow badge.](https://github.com/creamsandwch/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
-## CI/CD для проекта https://github.com/creamsandwch/infra_sp2
+## CI/CD for https://github.com/creamsandwch/infra_sp2
 ### REST API Django project in a Docker container.
 ### Launch
 To launch web application it is needed to build a docker container. It means that the machine used for launching should have docker installed. Then run the following commands:
