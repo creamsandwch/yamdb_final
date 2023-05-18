@@ -1,4 +1,5 @@
 # yamdb_final
+
 ![workflow badge.](https://github.com/creamsandwch/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
 ## CI/CD for https://github.com/creamsandwch/infra_sp2 with GitHub Actions. 
 Workflow file: ```./yamdb_workflow.yaml```
@@ -41,4 +42,8 @@ docker-compose exec web python manage.py download_db
 Full documentation for each API endpoint is available at:
 ```
 http://localhost/redoc/
+```
+or deployed globally:
+```
+158.160.43.214
 ```
