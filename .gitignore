@@ -150,3 +150,5 @@ static/
 posts/static/
 media/
 
+# just a place to try some random code
+oop.py
