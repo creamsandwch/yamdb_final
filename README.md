@@ -45,5 +45,5 @@ http://localhost/redoc/
 ```
 Deployed at:
 ```
-http://ksyatube.freedynamicdns.net/
+http://ksyatube.freedynamicdns.net/ (could not be opened with Chrome for some reason, works with Edge)
 ```
