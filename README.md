@@ -43,7 +43,7 @@ Full documentation for each API endpoint is available at:
 ```
 http://localhost/redoc/
 ```
-or deployed globally:
+Deployed at:
 ```
-158.160.43.214
+http://ksyatube.freedynamicdns.net/
 ```
